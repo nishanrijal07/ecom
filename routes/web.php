@@ -30,6 +30,9 @@ require __DIR__.'/auth.php';
 // Admin routes
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('dashboard', [HomeController::class, 'index'])->name('dashboard');
+    Route::get('home', [HomeController::class, 'index'])->name('home');
+    Route::get('admin-dashboard', [HomeController::class, 'index'])->name('admin-dashboard');
+
     Route::get('view_category', [AdminController::class, 'view_category'])->name('view.category');
     Route::post('add_category', [AdminController::class, 'add_category'])->name('add_category');
     Route::delete('delete_category/{id}', [AdminController::class, 'delete_category'])->name('delete_category');
