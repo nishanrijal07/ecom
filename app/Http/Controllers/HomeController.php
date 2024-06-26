@@ -9,6 +9,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use function Flasher\Toastr\Prime\toastr;
+
 class HomeController extends Controller
 {
     public function index()
@@ -51,7 +53,8 @@ class HomeController extends Controller
         if ($data) {
             return view('home.product_details', compact('data', 'count'));
         } else {
-            return redirect()->route('home')->with('error', 'Product not found');
+            toastr()->timeOut(5000)->closeButton()->addError('Product not found');
+            return redirect()->route('home');
         }
     }
 
@@ -65,9 +68,11 @@ class HomeController extends Controller
             $cart->product_id = $product->id;
             $cart->save();
 
-            return redirect()->back()->with('success', 'Product Added to The Cart Successfully');
+            toastr()->timeOut(5000)->closeButton()->addSuccess('Product Added to The Cart Successfully');
+            return redirect()->back();
         } else {
-            return redirect()->route('home')->with('error', 'Product not found');
+            toastr()->timeOut(5000)->closeButton()->addError('Product not found');
+            return redirect()->route('home');
         }
     }
 
@@ -87,9 +92,11 @@ class HomeController extends Controller
         $cartItem = Cart::find($id);
         if ($cartItem) {
             $cartItem->delete();
-            return redirect()->back()->with('success', 'Product Removed from Cart Successfully.');
+            toastr()->timeOut(5000)->closeButton()->addSuccess('Product Removed from Cart Successfully.');
+            return redirect()->back();
         } else {
-            return redirect()->back()->with('error', 'Cart item not found.');
+            toastr()->timeOut(5000)->closeButton()->addError('Cart item not found.');
+            return redirect()->back();
         }
     }
 
@@ -117,14 +124,15 @@ class HomeController extends Controller
             $data->delete();
         }
 
-        return redirect()->back()->with('success', 'Product Ordered Successfully');
+        toastr()->timeOut(5000)->closeButton()->addSuccess('Product Ordered Successfully');
+        return redirect()->back();
     }
 
-    public function myorders(){
-
+    public function myorders()
+    {
         $user = Auth::user()->id;
-        $count = Order::Where('user_id',$user)->get()->count();
-        $order = Order::where('user_id',$user)->get();
-        return view('home.order',compact('count','order'));
+        $count = Order::Where('user_id', $user)->get()->count();
+        $order = Order::where('user_id', $user)->get();
+        return view('home.order', compact('count', 'order'));
     }
 }

@@ -83,10 +83,10 @@
     </div>
 
     <div class="div_gap">
-        <input class="btn btn-primary" type="submit" value="Cash On Delivery">
+        <input class="btn btn-success" type="submit" value="Cash On Delivery">
 
-        <!-- <a class="btn btn-success" href="" style="background-color: purple;">Pay With Khalti</a> -->
-        <button id="payment-button">Pay with Khalti</button>
+        <a class="btn btn-success" href="" style="background-color: purple;">Pay With Khalti</a>
+       
 
     </div>
 </form>
@@ -172,7 +172,7 @@
   <script>
         var config = {
             // replace the publicKey with yours
-            "publicKey": "test_public_key_dc74e0fd57cb46cd93832aee0a390234",
+            "publicKey": "{{ config('app.khalti_public_key')}}",
             "productIdentity": "1234567890",
             "productName": "Dragon",
             "productUrl": "http://gameofthrones.wikia.com/wiki/Dragons",
