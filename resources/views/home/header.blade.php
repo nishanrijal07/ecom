@@ -14,16 +14,14 @@
           <a class="nav-link" href="{{ route('home') }}">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="shop.html">Shop</a>
+          <a class="nav-link" href="{{route('shop')}}">Shop</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="why.html">Why Us</a>
+          <a class="nav-link" href="{{route('why')}}">Why Us</a>
         </li>
+       
         <li class="nav-item">
-          <a class="nav-link" href="testimonial.html">Testimonial</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contact Us</a>
+          <a class="nav-link" href="{{route('contact')}}">Contact Us</a>
         </li>
       </ul>
       <div class="user_option">

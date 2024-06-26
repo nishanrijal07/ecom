@@ -1,4 +1,19 @@
-<section class="contact_section ">
+<!DOCTYPE html>
+<html>
+
+<head>
+@include('home.css')
+</head>
+
+<body>
+  <div class="hero_area">
+   @include('home.header')
+ 
+
+   
+ 
+
+   <section class="contact_section ">
     <div class="container px-0">
       <div class="heading_container ">
         <h2 class="">
@@ -41,3 +56,25 @@
   </section>
 
   <br><br><br>
+
+
+
+
+
+
+
+
+   
+
+ 
+
+  @include('home.footer')
+    <!-- footer section -->
+
+
+
+
+
+</body>
+
+</html>

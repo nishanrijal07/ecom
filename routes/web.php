@@ -38,7 +38,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::post('add_category', [AdminController::class, 'add_category'])->name('add_category');
     Route::delete('delete_category/{id}', [AdminController::class, 'delete_category'])->name('delete_category');
     Route::get('edit_category/{id}', [AdminController::class, 'edit_category'])->name('edit_category');
-    Route::post('update_category/{id}', [AdminController::class, 'update_category'])->name('update_category');
+    Route::post('update_category/{id}', [AdminController::class, 'update_category'])->name('update.category');
 
     Route::get('add_product', [AdminController::class, 'add_product'])->name('add_product');
     Route::post('upload_product', [AdminController::class, 'upload_product'])->name('upload_product');
@@ -59,5 +59,10 @@ Route::get('add_cart/{id}', [HomeController::class, 'add_cart'])->name('add_cart
 Route::get('mycart', [HomeController::class, 'mycart'])->name('mycart');
 Route::get('delete_cart/{id}', [HomeController::class, 'delete_cart'])->name('delete_cart');
 Route::post('confirm_order', [HomeController::class, 'confirm_order'])->name('confirm_order');
+
+Route::get('shop', [HomeController::class, 'shop'])->name('shop');
+Route::get('why', [HomeController::class, 'why'])->name('why');
+
+Route::get('contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/khalti/payment/verify', [PaymentController::class, 'verifypayment'])->name('khalti.verifypayment');
 
