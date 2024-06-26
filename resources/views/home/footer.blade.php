@@ -29,7 +29,7 @@
               ABOUT US
             </h6>
             <p>
-            Welcome to Sasto Bajar – The wackiest wonderland of gifts on the planet! 🎁✨ Discover wild, wacky, and wonderfully affordable gifts that turn the ordinary into the extraordinary. Stay fabulous, stay fun, and always keep it crazy with Sasto Bajar! 🚀
+            Welcome to Hamro Electronics – The wackiest wonderland of Electronics on the planet! 🎁✨ Discover wild, wacky, and wonderfully affordable gifts that turn the ordinary into the extraordinary. Stay fabulous, stay fun, and always keep it crazy with Hamro Electronics! 🚀
             </p>
           </div>
           <div class="col-md-6 col-lg-3">
