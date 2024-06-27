@@ -33,7 +33,7 @@
                   <li>
                   <a href="{{route('view_order')}}"><i class="fa fa-shopping-cart fa-4x" aria-hidden="true"></i>Orders </a></li>
 
-                  <li> <a href="{{route('message')}}"><i class="fa fa-message fa-4x" aria-hidden="true"></i>Message </a></li></li>
+                  <!-- <li> <a href="{{route('message')}}"><i class="fa fa-message fa-4x" aria-hidden="true"></i>Message </a></li></li> -->
                 
         </ul>
       </nav>

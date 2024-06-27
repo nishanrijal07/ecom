@@ -1,4 +1,4 @@
-<section class="slider_section">
+<!-- <section class="slider_section">
       <div class="slider_container">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
@@ -34,4 +34,4 @@
           
         </div>
       </div>
-    </section>
+    </section> -->

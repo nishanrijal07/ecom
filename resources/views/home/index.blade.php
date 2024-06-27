@@ -1,51 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-@include('home.css')
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hamro Electronics</title>
+  <!-- Include CSS -->
+  <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}"> <!-- Your custom styles -->
+  <!-- Include JavaScript -->
+  <script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
+  <script src="{{ asset('js/bootstrap.js') }}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="{{ asset('js/custom.js') }}"></script>
+  <!-- Include additional CSS or JavaScript files specific to your components -->
+  @include('home.css') <!-- Include additional CSS if necessary -->
 </head>
 
 <body>
   <div class="hero_area">
-   @include('home.header')
-    <!-- slider section -->
-
+    <!-- Include header section -->
+    @include('home.header')
+    
+    <!-- Include slider section -->
     @include('home.slider')
-
-    <!-- end slider section -->
   </div>
-  <!-- end hero area -->
+  <!-- End hero area -->
 
-  <!-- shop section -->
+  <!-- Shop section -->
+  @include('home.product')
+  <!-- End shop section -->
 
- @include('home.product')
-  <!-- end shop section -->
-
-
-
-
-
-
-
-
-
-   
-
-  <!-- info section -->
-
-  @include('home.footer')
-    <!-- footer section -->
-
+  <!-- Info section or any other content -->
+  <section class="info_section">
+    <!-- Include footer section -->
+    @include('home.footer')
+    <!-- End footer section -->
   </section>
-
-  <!-- end info section -->
-
-
-  <script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
-  <script src="{{asset('js/bootstrap.js')}}"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-  </script>
-  <script src="{{asset('js/custom.js')}}"></script>
+  <!-- End info section -->
 
 </body>
 

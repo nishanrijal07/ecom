@@ -8,7 +8,7 @@
                 <div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="box">
                         <div class="img-box">
-                            <img src="products/{{$products->image}}" alt="">
+                            <img src="products/{{$products->image}}" alt="{{$products->title}}" class="img-fluid">
                         </div>
                         <div class="detail-box">
                             <h6>{{$products->title}}</h6>
@@ -27,3 +27,18 @@
         </div>
     </div>
 </section>
+
+<style>
+    .img-box {
+        overflow: hidden; 
+        border-radius: 8px; 
+    }
+    .img-box img {
+        width: 100%; 
+        height: auto; 
+        transition: transform 0.3s ease; 
+    }
+    .img-box:hover img {
+        transform: scale(1.1);
+    }
+</style>

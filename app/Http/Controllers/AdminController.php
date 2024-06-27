@@ -181,11 +181,11 @@ public function on_the_way($id)
         // return redirect()->back()->with('success', 'Order status updated to Delivered');
     }
 
-    public function viewMessages()
-{
-    $messages = Message::all();
-    return view('admin.messages', compact('messages'));
-}
+//     public function viewMessages()
+// {
+//     $messages = Message::all();
+//     return view('admin.messages', compact('messages'));
+// }
 
 
  
