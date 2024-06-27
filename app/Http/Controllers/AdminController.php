@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Message;
 use App\Models\Order;
 use App\Models\Prdoduct;
 use App\Models\Product;
@@ -179,6 +180,12 @@ public function on_the_way($id)
 
         // return redirect()->back()->with('success', 'Order status updated to Delivered');
     }
+
+    public function viewMessages()
+{
+    $messages = Message::all();
+    return view('admin.messages', compact('messages'));
+}
 
 
  

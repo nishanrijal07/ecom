@@ -31,6 +31,9 @@
             justify-content: center;
             gap: 10px; /* Adjusts space between buttons */
         }
+        h3{
+            color:white;
+        }
     </style>
 </head>
 <body>

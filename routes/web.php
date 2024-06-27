@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
@@ -34,6 +35,9 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('home', [HomeController::class, 'index'])->name('home');
     Route::get('admin-dashboard', [HomeController::class, 'index'])->name('admin-dashboard');
 
+    Route::get('/messages', [AdminController::class, 'view_messages'])->name('admin.messages');
+
+
     Route::get('view_category', [AdminController::class, 'view_category'])->name('view.category');
     Route::post('add_category', [AdminController::class, 'add_category'])->name('add_category');
     Route::delete('delete_category/{id}', [AdminController::class, 'delete_category'])->name('delete_category');
@@ -62,6 +66,9 @@ Route::post('confirm_order', [HomeController::class, 'confirm_order'])->name('co
 
 Route::get('shop', [HomeController::class, 'shop'])->name('shop');
 Route::get('why', [HomeController::class, 'why'])->name('why');
+
+Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.show');
+Route::post('/contact', [ContactController::class, 'submitForm'])->name('contact.submit');
 
 Route::get('contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/khalti/payment/verify', [PaymentController::class, 'verifypayment'])->name('khalti.verifypayment');
