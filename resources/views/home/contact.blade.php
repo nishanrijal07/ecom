@@ -64,19 +64,5 @@
     <script src="{{ asset('admincss/vendor/jquery-validation/jquery.validate.min.js') }}"></script>
     <script src="{{ asset('admincss/js/charts-home.js') }}"></script>
     <script src="{{ asset('admincss/js/front.js') }}"></script>
-
-    <script>// Optional: Add smooth scrolling for anchor links (requires jQuery)
-$(document).ready(function() {
-  $('a[href^="#"]').on('click', function(event) {
-    var target = $(this.getAttribute('href'));
-    if (target.length) {
-      event.preventDefault();
-      $('html, body').stop().animate({
-        scrollTop: target.offset().top
-      }, 800);
-    }
-  });
-});
-</script>
 </body>
 </html>
