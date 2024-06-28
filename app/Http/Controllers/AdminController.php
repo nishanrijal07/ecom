@@ -22,7 +22,7 @@ class AdminController extends Controller
     public function add_category(Request $request)
     {
         $category = new Category;
-        $category->category_name = $request->category_name;  // Corrected to match form input
+        $category->category_name = $request->category_name;  
         $category->save();
 
         toastr()->timeOut(5000)->closeButton()->addSuccess('Category Added Successfully');

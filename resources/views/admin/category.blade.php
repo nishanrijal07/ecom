@@ -3,9 +3,22 @@
 <head>
     @include('admin.css')
     <style type="text/css">
-        input[type='text'] {
-            width: 400px;
-            height: 50px;
+        body {
+            background-color: #343a40; /* Dark background for contrast */
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .page-content {
+            padding: 0px;
+        }
+        .page-header {
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: skyblue;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
         }
         .div_deg {
             display: flex;
@@ -13,24 +26,67 @@
             align-items: center;
             margin: 30px;
         }
-        .table_deg {
-            text-align: center;
-            margin: auto;
+        input[type='text'] {
+            width: 400px;
+            height: 50px;
+            padding: 0 10px;
+            box-sizing: border-box;
             border: 2px solid yellowgreen;
+            border-radius: 4px;
+            font-size: 16px;
+            color: black;
+        }
+        .btn-primary {
+            padding: 10px 20px;
+            margin-left: 10px;
+            border-radius: 4px;
+            background-color: yellowgreen;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #5a9d5a;
+        }
+        .table_deg {
+            margin: auto;
             margin-top: 50px;
-            width: 600px;
+            width: 80%;
+            border-collapse: collapse;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 15px;
+            border: 1px solid yellowgreen;
+            text-align: center;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         th {
             background-color: skyblue;
-            padding: 15px;
             font-size: 20px;
             font-weight: bold;
             color: white;
         }
         td {
             color: white;
-            padding: 10px;
-            border: 1px solid skyblue;
+        }
+        td:hover {
+            background-color: yellowgreen;
+            color: white;
+        }
+        .btn-success, .btn-danger {
+            padding: 8px 16px;
+            border-radius: 4px;
+            color: white;
+            text-decoration: none;
+        }
+        .btn-success {
+            background-color: green;
+        }
+        .btn-danger {
+            background-color: red;
         }
     </style>
 </head>
@@ -42,9 +98,9 @@
 <div class="page-content">
     <div class="page-header">
         <div class="container-fluid">
-            <h1 style="color:white;">Add Category</h1>
+            <h1>Add Category</h1>
             <div class="div_deg">
-                <form action="{{ route('add_category') }}" method="post">
+                <form action="{{ route('add.category') }}" method="post">
                     @csrf
                     <div>
                         <input type="text" name="category_name" required>
@@ -63,10 +119,10 @@
                     <tr>
                         <td>{{ $category->category_name }}</td>
                         <td>
-                            <a class="btn btn-success" href="{{ route('edit_category', $category->id) }}">Edit</a>
+                            <a class="btn btn-success" href="{{ route('edit.category', $category->id) }}">Edit</a>
                         </td>
                         <td>
-                            <form action="{{ route('delete_category', $category->id) }}" method="POST" onsubmit="return confirmation(event);">
+                            <form action="{{ route('delete.category', $category->id) }}" method="POST" onsubmit="return confirmation(event);">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Delete</button>
@@ -78,10 +134,6 @@
         </div>
     </div>
 </div>
-
-
-
-
 
 @include('admin.js')
 

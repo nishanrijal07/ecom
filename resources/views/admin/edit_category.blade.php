@@ -57,7 +57,7 @@
         <div class="container-fluid">
             <div class="dev_deg">
                 <h1>Update Category</h1>
-                <form action="{{ route('update_category', $data->id) }}" method="post">
+                <form action="{{ route('update.category', $data->id) }}" method="post">
                     @csrf
                     <input type="text" name="category" value="{{ $data->category_name }}" required>
                     <input class="btn btn-primary" type="submit" value="Update Category">
