@@ -70,7 +70,7 @@
                             <td>{{$data->product->title}}</td>
                             <td>{{$data->product->price}}</td>
                             <td>
-                                <img width="150" src="products/{{$data->product->image}}">
+                                 <img height="120" width="120" src="{{ asset('products/' . $data->product->image) }}">
                             </td>
                             <td>{{$data->payment_status}}</td>
                             <td>

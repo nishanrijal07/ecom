@@ -44,7 +44,7 @@
         <div class="container-fluid">
             <h2>Update Product</h2>
             <div class="div_deg">
-                <form action="{{ route('edit_product', $data->id) }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('edit.product', $data->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div>
                         <label>Title</label>

@@ -44,12 +44,12 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('edit_category/{id}', [AdminController::class, 'edit_category'])->name('edit.category');
     Route::post('update_category/{id}', [AdminController::class, 'update_category'])->name('update.category');
 
-    Route::get('add_product', [AdminController::class, 'add_product'])->name('add_product');
-    Route::post('upload_product', [AdminController::class, 'upload_product'])->name('upload_product');
+    Route::get('add_product', [AdminController::class, 'add_product'])->name('add.product');
+    Route::post('upload_product', [AdminController::class, 'upload_product'])->name('upload.product');
     Route::get('view_product', [AdminController::class, 'view_product'])->name('view_product');
-    Route::get('delete_product/{id}', [AdminController::class, 'delete_product'])->name('delete_product');
-    Route::get('update_product/{id}', [AdminController::class, 'update_product'])->name('update_product');
-    Route::post('edit_product/{id}', [AdminController::class, 'edit_product'])->name('edit_product');
+    Route::get('delete_product/{id}', [AdminController::class, 'delete_product'])->name('delete.product');
+    Route::get('update_product/{id}', [AdminController::class, 'update_product'])->name('update.product');
+    Route::post('edit_product/{id}', [AdminController::class, 'edit_product'])->name('edit.product');
     Route::get('product_search', [AdminController::class, 'product_search'])->name('product_search');
 
     Route::get('view_order', [AdminController::class, 'view_order'])->name('view_order');

@@ -55,7 +55,7 @@
         <div class="container-fluid">
        
 
-    <form action="{{route('product_search')}}" metho="get">
+    <form action="{{route('product_search')}}" method="get">
 
     @csrf
         <input type="search" name="search">
@@ -82,15 +82,17 @@
                         <td>{{ $products->price }}</td>
                         <td>{{ $products->quantity }}</td>
                         <td>
-                            <img height="120" width="120" src="products/{{ $products->image }}">
+                        
+                        <img height="120" width="120" src="{{ asset('products/' . $products->image) }}">
+
                         </td>
 
                         <td>
-                            <a class="btn btn-success" href="{{route('update_product',$products->id)}}">Edit</a>
+                            <a class="btn btn-success" href="{{route('update.product',$products->id)}}">Edit</a>
                         </td>
 
                         <td>
-                            <a class="btn btn-danger" onclick="confirmation(event)" href="{{route('delete_product',$products->id)}}">Delete</a>
+                            <a class="btn btn-danger" onclick="confirmation(event)" href="{{route('delete.product',$products->id)}}">Delete</a>
                         </td>
                     </tr>
                     @endforeach

@@ -49,7 +49,7 @@ height: 50px;
 
           <h1> Add Product</h1>
             <div class="div_deg">
-            <form action="{{ route('upload_product') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('upload.product') }}" method="post" enctype="multipart/form-data">
     @csrf
     <!-- Form inputs -->
             
