@@ -8,11 +8,11 @@
                   <div class="col-md-7">
                     <div class="detail-box"> 
                       <h1>
-                        Welcome To Our <br>
+                        Welcome To  <br>
                         Hamro Electronics
                       </h1>
                       <p>
-                      visit our online store and explore the various categories of electronics available. You can find products such as smartphones, laptops, tablets, home appliances, and more.
+                      Visit our online store and explore the various categories of electronics available. You can find products such as laptops, Tablets Phones, Camera & Gimble , Home appliances, and more.
 
 
                       </p>
