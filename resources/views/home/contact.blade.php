@@ -28,7 +28,7 @@
                                 {{ session('success') }}
                             </div>
                         @endif
-                        <form action="{{ route('contact.submit') }}" method="post">
+                        <form action="" method="post">
                             @csrf
                             <div>
                                 <input type="text" name="name" placeholder="Name" required />

@@ -7,6 +7,7 @@
     "require": {
         "php": "^8.2",
         "cviebrock/eloquent-sluggable": "^11.0",
+        "dipesh79/laravel-khalti": "^0.0.1",
         "laracasts/flash": "^3.2",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",

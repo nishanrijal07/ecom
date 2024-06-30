@@ -113,7 +113,7 @@
                 Fast Delivery
               </h5>
               <p>
-                variations of passages of Lorem Ipsum available
+              Receive your gadgets quickly with our fast delivery service. Enjoy the latest technology without the wait.
               </p>
             </div>
           </div>
@@ -228,7 +228,7 @@
                 Free Shiping
               </h5>
               <p>
-                variations of passages of Lorem Ipsum available
+              Benefit from our free shipping on all orders. Save more while you shop for top-notch electronics.
               </p>
             </div>
           </div>
@@ -248,9 +248,7 @@
               <h5>
                 Best Quality
               </h5>
-              <p>
-                variations of passages of Lorem Ipsum available
-              </p>
+              <p>Shop with confidence knowing we offer only the highest quality products. Experience the technology.</p>
             </div>
           </div>
         </div>

@@ -66,9 +66,6 @@ Route::post('confirm_order', [HomeController::class, 'confirm_order'])->name('co
 
 Route::get('shop', [HomeController::class, 'shop'])->name('shop');
 Route::get('why', [HomeController::class, 'why'])->name('why');
-
-
-
 Route::get('contact', [HomeController::class, 'contact'])->name('contact');
-Route::post('/khalti/payment/verify', [PaymentController::class, 'verifypayment'])->name('khalti.verifypayment');
+
 

@@ -17,6 +17,9 @@
 
  @include('home.product')
   <!-- end shop section -->
+   
+  @include('home.footer')
+    <!-- footer section -->
 
 
 

@@ -1,86 +1,156 @@
-<section class="info_section  layout_padding2-top">
-    <div class="social_container">
-      <div class="social_box">
-     
-        <a href="https://github.com/nishanrijal07">
-          <i class="fa fa-github" aria-hidden="true"></i>
-        </a>
-        <a href="https://twitter.com/Lowkey_nishan">
-          <i class="fa fa-twitter" aria-hidden="true"></i>
-        </a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footer Example</title>
+  <!-- MDB CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Custom CSS for attractive footer */
+    footer {
+      background-color: #f8f9fa; /* Light background color */
+      color: #495057; /* Dark text color */
+    }
+    .text-reset {
+      color: #007bff; /* Blue color for links */
+    }
+    .text-reset:hover {
+      color: #0056b3; /* Darker blue on hover for links */
+      text-decoration: none; /* Remove underline on hover */
+    }
+  </style>
+</head>
+<body>
 
-        <a href="https://www.linkedin.com/in/nishan-rijal-33239820b/">
-          <i class="fa fa-linkedin" aria-hidden="true"></i>
-        </a>
-        <a href="https://www.instagram.com/nishan__07/">
-          <i class="fa fa-instagram" aria-hidden="true"></i>
-        </a>
+<!-- Your content here -->
 
-        <a href="https://www.youtube.com/channel/UCm2ZA-soY77y3a81Lw48W8A">
-          <i class="fa fa-youtube" aria-hidden="true"></i>
-        </a>
-      </div>
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+     <!-- Left -->
+     <div class="me-5 d-none d-lg-block">
+      <span>Get connected with us on social networks:</span>
     </div>
-    <div class="info_container ">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-lg-3">
-            <h6>
-              ABOUT US
-            </h6>
-            <p>
-            Welcome to Hamro Electronics – The wackiest wonderland of Electronics on the planet! 🎁✨ Discover wild, wacky, and wonderfully affordable gifts that turn the ordinary into the extraordinary. Stay fabulous, stay fun, and always keep it crazy with Hamro Electronics! 🚀
-            </p>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="info_form ">
-              <h5>
-                Newsletter
-              </h5>
-              <form action="#">
-                <input type="email" placeholder="Enter your email">
-                <button>
-                  Subscribe
-                </button>
-              </form>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <h6>
-              NEED HELP
-            </h6>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
-            </p>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <h6>
-              CONTACT US
-            </h6>
-            <div class="info_link-box">
-              <a href="">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span>Gaindakot -5 Nawalparasi </span>
-              </a>
-              <a href="">
-                <i class="fa fa-phone" aria-hidden="true"></i>
-                <span>+977-9865523026</span>
-              </a>
-              <a href="">
-                <i class="fa fa-envelope" aria-hidden="true"></i>
-                <span> nishan@lict.edu.np</span>
-              </a>
-            </div>
-          </div>
+    <!-- Left -->
+
+    <!-- Right -->
+    <div>
+      <a href="#" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="#" class="me-4 text-reset">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="#" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="#" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="#" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>Hamro Electronics
+          </h6>
+          <p>
+          Welcome to Hamro Electronics Shop, your one-stop destination for all your electronic needs. We specialize in providing a wide range of high-quality electronics, including smartphones, laptops, tablets, cameras, and accessories.
+          </p>
         </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Products
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Laptop</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Cctv</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Mobile Phone</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Camera & Gimble</a>
+          </p>
+
+          <p>
+            <a href="#!" class="text-reset">Apple Watch</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Useful links
+          </h6>
+          <p>
+            <a href="{{ route('home') }}" class="text-reset">Home</a>
+          </p>
+          <p>
+            <a href="{{ route('shop') }}" class="text-reset">Shop</a>
+          </p>
+          <p>
+            <a href="{{ route('contact') }}" class="text-reset">Contact Us</a>
+          </p>
+          <p>
+            <a href="{{ route('myorders') }}" class="text-reset">My Orders</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3"></i> Bharatpur,9 Chitwan</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            hamroelectronics@gmail.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> +977-9865523026</p>
+        </div>
+        <!-- Grid column -->
       </div>
+      <!-- Grid row -->
     </div>
-    <!-- footer section -->
-    <footer class=" footer_section">
-      <div class="container">
-        <p>
-          &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://www.linkedin.com/in/nishan-rijal-33239820b">Nishan Rijal</a>
-        </p>
-      </div>
-    </footer>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2024 Copyright:
+    <a href="https://www.linkedin.com/in/nishan-rijal-33239820b">Nishan Rijal</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+</body>
+</html>
