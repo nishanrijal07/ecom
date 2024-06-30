@@ -254,22 +254,6 @@
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- end why section -->
- 
-
-  
-
-
-
-
-
-
-
-
-
-   
 
 
 
