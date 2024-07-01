@@ -49,8 +49,8 @@
 </head>
 <body>
 
-@include('admin.header') <!-- Assuming this includes the header -->
-@include('admin.sidebar') <!-- Assuming this includes the sidebar -->
+@include('admin.header') 
+@include('admin.sidebar') 
 
 <div class="page-content">
     <div class="page-header">

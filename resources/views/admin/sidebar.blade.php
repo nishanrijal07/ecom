@@ -34,7 +34,6 @@
                   <a href="{{route('view_order')}}"><i class="fa fa-shopping-cart fa-4x" aria-hidden="true"></i>Orders </a></li>
 
                   
-                  <li>
-                  <a href="{{route('view_order')}}"><i class="fa-solid fa-envelope fa-4x"></i>Messages </a></li>
+                 
         </ul>
       </nav>
