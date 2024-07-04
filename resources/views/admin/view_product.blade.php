@@ -55,7 +55,7 @@
         <div class="container-fluid">
        
 
-    <form action="{{route('product_search')}}" method="get">
+    <form action="{{route('product.search')}}" method="get">
 
     @csrf
         <input type="search" name="search">

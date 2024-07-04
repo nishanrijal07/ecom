@@ -53,17 +53,20 @@ class AdminController extends Controller
 
     }
 
-    public function update_category(Request $request,$id){
-        $data = category::find($id);
-
-        $data->category_name= $request->category;
-        $data->save();
-        toastr()->timeOut(3000)->closeButton()->addSuccess('Category Updated Successfully');
-        return redirect('/view_category');
-
-
+    public function update_category(Request $request, $id) {
+        $data = Category::find($id);
+        
+        if ($data) {
+            $data->category_name = $request->category;
+            $data->save();
+            toastr()->timeOut(3000)->closeButton()->addSuccess('Category Updated Successfully');
+        } else {
+            toastr()->timeOut(3000)->closeButton()->addError('Category not found');
+        }
+    
+        return redirect()->route('view.category');
     }
-
+    
     public function add_product(){
 
         $category = category::all(); 
@@ -93,7 +96,7 @@ class AdminController extends Controller
 
 public function view_product(){
 
-    $product= Product::paginate(3);
+    $product= Product::paginate(5);
     return view('admin.view_product',compact('product'));
 }
 
@@ -118,28 +121,35 @@ public function update_product($id){
     return view('admin.update_page',compact('data','category'));
 }
 
-public function edit_product(Request $request,$id){
 
-    $data= product::find($id);
+
+
+public function edit_product(Request $request, $id)
+{
+    $data = Product::find($id);
+    if (!$data) {
+        toastr()->error('Product not found');
+        return redirect()->back();
+    }
+
     $data->title = $request->title;
     $data->description = $request->description;
     $data->price = $request->price;
     $data->quantity = $request->qty;
     $data->category = $request->category;
 
-    $image = $request->file('image');
-    if ($image) {
-        $imageName = time() . '.' . $image->getClientOriginalExtension(); 
+    if ($request->hasFile('image')) {
+        $image = $request->file('image');
+        $imageName = time() . '.' . $image->getClientOriginalExtension();
         $request->image->move('products', $imageName);
-        $data->image = $imageName; 
+        $data->image = $imageName;
+    }
 
+    $data->save();
+    toastr()->success('Product Updated Successfully');
+    return redirect()->route('view.product');
 }
-$data->save();
-toastr()->timeOut(3000)->closeButton()->addSuccess('Product Updated Successfully');
-return redirect('/view_product');
 
-
-}
 
 public function product_search(Request $request)
 {
