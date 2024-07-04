@@ -101,19 +101,32 @@ public function view_product(){
 }
 
 
-public function delete_product($id){
+public function delete_product($id)
+{
+    // Find the product by its ID
+    $product = Product::find($id);
 
-    $data = Product::find($id);
-    $image_path = public_path('products/'.$data->image);
-    if(file_exists($image_path))
-    {
+    // Check if the product exists
+    if (!$product) {
+        toastr()->error('Product not found');
+        return redirect()->back();
+    }
+
+    // Delete the product image from the public folder
+    $image_path = public_path('products/' . $product->image);
+    if (file_exists($image_path)) {
         unlink($image_path);
     }
-    $data->delete();
 
-    toastr()->timeOut(3000)->closeButton()->addSuccess('Product Deleted Successfully');
+    // Delete the product from the database
+    $product->delete();
+
+    // Display success message and redirect back
+    toastr()->success('Product Deleted Successfully');
     return redirect()->back();
 }
+
+
 
 public function update_product($id){
     $data = product::find($id);

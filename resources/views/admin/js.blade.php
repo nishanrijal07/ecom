@@ -1,7 +1,9 @@
+<!-- Include SweetAlert -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script type="text/javascript">
     function confirmation(event) {
         event.preventDefault();
-        var form = event.target;
+        var form = event.target.closest('a'); // Get the parent anchor element
         swal({
             title: "Are You Sure to Delete This?",
             text: "This deletion will be permanent.",
@@ -10,7 +12,7 @@
             dangerMode: true,
         }).then((willDelete) => {
             if (willDelete) {
-                form.submit();
+                window.location.href = form.href; // Redirect to the delete route
             }
         });
     }
