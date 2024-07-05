@@ -100,32 +100,18 @@ public function view_product(){
     return view('admin.view_product',compact('product'));
 }
 
-
-public function delete_product($id)
-{
-    // Find the product by its ID
-    $product = Product::find($id);
-
-    // Check if the product exists
-    if (!$product) {
-        toastr()->error('Product not found');
-        return redirect()->back();
-    }
-
-    // Delete the product image from the public folder
-    $image_path = public_path('products/' . $product->image);
+public function delete_product($id){
+    $data = Product::find($id);
+    $image_path = public_path('products/' . $data->image);
     if (file_exists($image_path)) {
         unlink($image_path);
     }
+    $data->delete();
 
-    // Delete the product from the database
-    $product->delete();
-
-    // Display success message and redirect back
-    toastr()->success('Product Deleted Successfully');
-    return redirect()->back();
+    toastr()->timeOut(3000)->closeButton()->addSuccess('Product Deleted Successfully');
+    // return redirect()->back();
+    return redirect()->route('view.product');
 }
-
 
 
 public function update_product($id){
@@ -172,43 +158,34 @@ public function product_search(Request $request)
     return view('admin.view_product', compact('product'));
 }
 
-
-public function view_order(){
-
+public function view_order() {
     $data = Order::all();
-    return view('admin.order',compact('data'));
+    return view('admin.order', compact('data'));
 }
 
-public function on_the_way($id)
-    {
-        $order = Order::find($id);
+public function on_the_way($id) {
+    $order = Order::find($id);
+    if ($order) {
         $order->status = 'On The Way';
         $order->save();
-
-        // toastr()->timeOut(3000)->closeButton()->addSuccess('Order status updated to On The Way');
-        return redirect('/view_order');
-
-        // return redirect()->back()->with('success', 'Order status updated to On The Way');
+        toastr()->timeOut(3000)->closeButton()->addSuccess('Order status updated to On The Way');
     }
+    return redirect()->back();
+}
 
-    public function delivered($id)
-    {
-        $order = Order::find($id);
+public function delivered($id) {
+    $order = Order::find($id);
+    if ($order) {
         $order->status = 'Delivered';
         $order->save();
-
-        
-        // toastr()->timeOut(3000)->closeButton()->addSuccess('Order status updated to Delivered');
-        return redirect('/view_order');
-
-        // return redirect()->back()->with('success', 'Order status updated to Delivered');
+        toastr()->timeOut(3000)->closeButton()->addSuccess('Order status updated to Delivered');
     }
+    return redirect()->back();
+}
 
-//     public function viewMessages()
-// {
-//     $messages = Message::all();
-//     return view('admin.messages', compact('messages'));
-// }
+ 
+
+
 
 
  

@@ -48,8 +48,6 @@
             <h3>All Orders</h3>
                 <br>
                 <div class="table_center">
-
-                
                     <table>
                         <tr>
                             <th>Customer Name</th>
@@ -62,30 +60,30 @@
                             <th>Status</th>
                             <th>Change Status</th>
                         </tr>
-                        @foreach($data as $data)
+                        @foreach($data as $order)
                         <tr>
-                            <td>{{$data->name}}</td>
-                            <td>{{$data->rec_address}}</td>
-                            <td>{{$data->phone}}</td>
-                            <td>{{$data->product->title}}</td>
-                            <td>{{$data->product->price}}</td>
+                            <td>{{ $order->name }}</td>
+                            <td>{{ $order->rec_address }}</td>
+                            <td>{{ $order->phone }}</td>
+                            <td>{{ $order->product->title }}</td>
+                            <td>{{ $order->product->price }}</td>
                             <td>
-                                 <img height="120" width="120" src="{{ asset('products/' . $data->product->image) }}">
+                            <img height="120" width="120" src="{{ asset('products/' . $order->product->image) }}">
                             </td>
-                            <td>{{$data->payment_status}}</td>
+                            <td>{{ $order->payment_status }}</td>
                             <td>
-                                @if($data->status == 'in progress')
-                                <span style="color: red;">{{$data->status}}</span>
-                                @elseif($data->status == 'On The Way')
-                                <span style="color: yellow;">{{$data->status}}</span>
+                                @if($order->status == 'in progress')
+                                <span style="color: red;">{{ $order->status }}</span>
+                                @elseif($order->status == 'On The Way')
+                                <span style="color: yellow;">{{ $order->status }}</span>
                                 @else
-                                <span style="color: green;">{{$data->status}}</span>
+                                <span style="color: green;">{{ $order->status }}</span>
                                 @endif
                             </td>
                             <td>
                                 <div class="btn-group">
-                                    <a class="btn btn-primary" href="{{route('on_the_way',$data->id)}}">On The Way</a>
-                                    <a class="btn btn-success" href="{{route('delivered',$data->id)}}">Delivered</a>
+                                    <a class="btn btn-primary" href="{{ route('on.the.way', $order->id) }}">On The Way</a>
+                                    <a class="btn btn-success" href="{{ route('delivered', $order->id) }}">Delivered</a>
                                 </div>
                             </td>
                         </tr>

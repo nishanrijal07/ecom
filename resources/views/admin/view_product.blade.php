@@ -70,26 +70,31 @@
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
-                    @foreach($product as $products)
-                    <tr>
-                        <td>{{ $products->title }}</td>
-                        <td>{!! Str::limit($products->description, 50) !!}</td>
-                        <td>{{ $products->category }}</td>
-                        <td>{{ $products->price }}</td>
-                        <td>{{ $products->quantity }}</td>
-                        <td>
-                            <img height="120" width="120" src="{{ asset('products/' . $products->image) }}">
-                        </td>
-                        <td>
-                            <a class="btn btn-success" href="{{ route('update.product', $products->id) }}">Edit</a>
-                        </td>
-                        <td>
-                            <!-- Use onclick event to trigger confirmation -->
-                            <a class="btn btn-danger" onclick="confirmation(event)" href="{{ route('delete.product', $products->id) }}">Delete</a>
-                        </td>
-                    </tr>
-                    @endforeach
+             @foreach($product as $products)
+<tr>
+    <td>{{ $products->title }}</td>
+    <td>{!! Str::limit($products->description, 50) !!}</td>
+    <td>{{ $products->category }}</td>
+    <td>{{ $products->price }}</td>
+    <td>{{ $products->quantity }}</td>
+    <td>
+        <img height="120" width="120" src="{{ asset('products/' . $products->image) }}">
+    </td>
+    <td>
+        <a class="btn btn-success" href="{{ route('update.product', $products->id) }}">Edit</a>
+    </td>
+    <td>
+        <form action="{{ route('delete.product', $products->id) }}" method="POST" onsubmit="confirmation(event)">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+    </td>
+</tr>
+@endforeach
+
                 </table>
+
             </div>
 
             <div class="div_deg">

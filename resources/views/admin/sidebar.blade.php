@@ -31,7 +31,7 @@
                   </li>
 
                   <li>
-                  <a href="{{route('view_order')}}"><i class="fa fa-shopping-cart fa-4x" aria-hidden="true"></i>Orders </a></li>
+                  <a href="{{route('view.order')}}"><i class="fa fa-shopping-cart fa-4x" aria-hidden="true"></i>Orders </a></li>
 
                   
                  

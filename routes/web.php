@@ -52,8 +52,8 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::post('edit_product/{id}', [AdminController::class, 'edit_product'])->name('edit.product');
     Route::get('product_search', [AdminController::class, 'product_search'])->name('product.search');
 
-    Route::get('view_order', [AdminController::class, 'view_order'])->name('view_order');
-    Route::get('on_the_way/{id}', [AdminController::class, 'on_the_way'])->name('on_the_way');
+    Route::get('view_order', [AdminController::class, 'view_order'])->name('view.order');
+    Route::get('on_the_way/{id}', [AdminController::class, 'on_the_way'])->name('on.the.way');
     Route::get('delivered/{id}', [AdminController::class, 'delivered'])->name('delivered');
 });
 
