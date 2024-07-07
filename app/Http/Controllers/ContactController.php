@@ -2,31 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Contact;
 use Illuminate\Http\Request;
+use App\Models\Contact; // Adjust the namespace as per your Contact model
 
 class ContactController extends Controller
 {
-    
-
-    public function showForm()
-    {
-        return view('contact');
-    }
-
     public function store(Request $request)
     {
-        $validated = $request->validate([
+        // Validate the form data
+        $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
-            'phone' => 'required|string|max:15',
-            'message' => 'required|string|max:500',
+            'phone' => 'required|string|max:20',
+            'message' => 'required|string',
         ]);
 
-        Contact::create($validated);
+        // Store the contact message in the database
+        $contact = new Contact();
+        $contact->name = $request->name;
+        $contact->email = $request->email;
+        $contact->phone = $request->phone;
+        $contact->message = $request->message;
+        $contact->save();
 
-       
-        toastr()->timeOut(5000)->closeButton()->addSuccess('Message sent successfully!');
-        return redirect()->back();
+        // Flash success message to the session
+        return redirect()->route('contact')->with('success', 'Message sent successfully!');
     }
 }

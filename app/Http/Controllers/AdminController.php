@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Contact;
 use App\Models\Message;
 use App\Models\Order;
 use App\Models\Prdoduct;
@@ -181,6 +182,13 @@ public function delivered($id) {
         toastr()->timeOut(3000)->closeButton()->addSuccess('Order status updated to Delivered');
     }
     return redirect()->back();
+}
+
+
+public function messages()
+{
+    $messages = Contact::all(); 
+    return view('admin.messages', compact('messages'));
 }
 
  

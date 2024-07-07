@@ -60,9 +60,12 @@ Route::middleware('auth')->group(function () {
     Route::get('delete_cart/{id}', [HomeController::class, 'delete_cart'])->name('delete_cart');
     Route::get('mycart', [HomeController::class, 'mycart'])->name('mycart');
     Route::post('confirm_order', [HomeController::class, 'confirm_order'])->name('confirm_order');
+    Route::get('contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('messages', [AdminController::class, 'messages'])->name('messages');
+
+Route::post('contact', [ContactController::class, 'store'])->name('contact.store');
 });
 
 Route::get('shop', [HomeController::class, 'shop'])->name('shop');
 Route::get('why', [HomeController::class, 'why'])->name('why');
-Route::get('contact', [HomeController::class, 'contact'])->name('contact');
-Route::post('contact', [ContactController::class, 'store'])->name('contact.store');
+
