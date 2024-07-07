@@ -16,9 +16,13 @@
 
 
                       </p>
-                      <a href="{{route('contact')}}">
-                        Contact Us
-                      </a>
+                      <a href="{{route('why')}}" class="about-us">
+  About Us
+</a>
+<a href="{{route('contact')}}" class="contact-us">
+  Contact Us
+</a>
+
                     </div>
                   </div>
                   <div class="col-md-5 ">

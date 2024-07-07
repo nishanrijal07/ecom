@@ -34,18 +34,68 @@ body {
 }
 
 /*end header section*/
+/* Common styles for links in slider_section */
+.slider_section .detail-box a {
+  display: inline-block;
+  padding: 10px 40px;
+  background-color: #f1e9eb;
+  color: #030303;
+  border: 1px solid #547d1a;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  margin-top: 25px;
+  text-transform: uppercase;
+}
+
+.slider_section .detail-box a:hover {
+  background-color: blue;
+  color: #1332bc;
+}
+
+/* Specific styles for About Us link */
+.slider_section .detail-box .about-us {
+  color: black;
+  background-color: white;
+  border: 1px solid #1a73e8;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  margin-right: 15px; /* Space between links */
+}
+
+.slider_section .detail-box .about-us:hover {
+  background-color: blue;
+  color: #f7f7f8;
+}
+
+/* Specific styles for Contact Us link */
+.slider_section .detail-box .contact-us {
+  color: red;
+  background-color: #ffeb3b;
+  border: 1px solid #ffeb3b;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.slider_section .detail-box .contact-us:hover {
+  background-color: blue;
+  color: #f7f7f8;
+}
+
+/* Additional CSS */
 .slider_section .slider_container {
   color: #fefefe;
   background-color: #000000;
-  background-color: black;
   padding: 25px;
   border-radius: 0 0 15px 15px;
 }
 
 .slider_section .row {
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .slider_section .img-box {
@@ -53,8 +103,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding: 45px;
 }
 
@@ -73,32 +123,14 @@ body {
   margin-bottom: 10px;
 }
 
-.slider_section .detail-box a {
-  display: inline-block;
-  padding: 10px 40px;
-  background-color: #db4566;
-  color: #ffffff;
-  border: 1px solid #db4566;
-  border-radius: 5px;
-  -webkit-transition: all .3s;
-  transition: all .3s;
-  margin-top: 25px;
-  text-transform: uppercase;
-}
-
-.slider_section .detail-box a:hover {
-  background-color: transparent;
-  color: #db4566;
-}
-
 .slider_section .carousel_btn-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   background-color: #ffffff;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: absolute;
   bottom: -25px;
   left: 5%;
@@ -121,6 +153,7 @@ body {
   color: #000000;
   font-size: 14px;
 }
+
 
 
 .saving_section .row {
