@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Page Title</title>
+    <title>Hamro Electronics</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome CSS -->
@@ -31,7 +31,12 @@
 
         .navbar-brand img {
             height: 40px; /* Adjust height of the logo */
-            /* You can add more styling as needed, such as padding or margins */
+            opacity: 0.8; /* Make the logo slightly transparent */
+            transition: opacity 0.3s; /* Smooth transition on hover */
+        }
+
+        .navbar-brand img:hover {
+            opacity: 1; /* Remove transparency on hover */
         }
 
         .navbar-nav {
@@ -70,6 +75,21 @@
             color: #007bff; /* Hover color */
             text-decoration: none; /* Remove default underline */
         }
+
+        /* Custom button styles */
+        .btn-danger {
+            background-color: #dc3545; /* Default background color */
+            border: none; /* Remove border */
+            color: #fff; /* Text color */
+            padding: 10px 20px; /* Padding */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s, transform 0.3s; /* Smooth transition on hover */
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333; /* Darker background color on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
     </style>
 </head>
 
@@ -97,7 +117,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('why') }}">Why Us</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
                     </li>
