@@ -28,24 +28,25 @@
                                 {{ session('success') }}
                             </div>
                         @endif
-                        <form action="" method="post">
-                            @csrf
-                            <div>
-                                <input type="text" name="name" placeholder="Name" required />
-                            </div>
-                            <div>
-                                <input type="email" name="email" placeholder="Email" required />
-                            </div>
-                            <div>
-                                <input type="text" name="phone" placeholder="Phone" required />
-                            </div>
-                            <div>
-                                <textarea name="message" class="message-box" placeholder="Message" required></textarea>
-                            </div>
-                            <div class="d-flex">
-                                <button type="submit">SEND</button>
-                            </div>
-                        </form>
+                        <form action="{{ route('contact.store') }}" method="post">
+    @csrf
+    <div>
+        <input type="text" name="name" placeholder="Name" required />
+    </div>
+    <div>
+        <input type="email" name="email" placeholder="Email" required />
+    </div>
+    <div>
+        <input type="text" name="phone" placeholder="Phone" required />
+    </div>
+    <div>
+        <textarea name="message" class="message-box" placeholder="Message" required></textarea>
+    </div>
+    <div class="d-flex">
+        <button type="submit">SEND</button>
+    </div>
+</form>
+
                     </div>
                 </div>
             </div>

@@ -113,7 +113,7 @@
                 Fast Delivery
               </h5>
               <p>
-              Receive your gadgets quickly with our fast delivery service. Enjoy the latest technology without the wait.
+              Receive your gadgets quickly with our fast delivery service.
               </p>
             </div>
           </div>
@@ -248,13 +248,14 @@
               <h5>
                 Best Quality
               </h5>
-              <p>Shop with confidence knowing we offer only the highest quality products. Experience the technology.</p>
+              <p>Shop with confidence knowing we offer only the highest quality products.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
+<br>
 
 
   @include('home.footer')

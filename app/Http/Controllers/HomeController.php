@@ -159,7 +159,6 @@ class HomeController extends Controller
 
     public function contact()
     {
-     
         $count = 0;
         if (Auth::check()) {
             $count = Cart::where('user_id', Auth::id())->count();

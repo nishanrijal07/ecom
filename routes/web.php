@@ -15,8 +15,7 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 //     ->middleware(['auth', 'verified'])
 //     ->name('dashboard');
 
-
-    Route::get('myorders', [HomeController::class, 'home'])->name('myorders');
+Route::get('myorders', [HomeController::class, 'home'])->name('myorders');
 
 // Authenticated user routes
 Route::middleware('auth')->group(function () {
@@ -25,18 +24,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-
 require __DIR__.'/auth.php';
-
 
 // Admin routes
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('dashboard', [HomeController::class, 'index'])->name('dashboard');
     Route::get('home', [HomeController::class, 'index'])->name('home');
     Route::get('admin-dashboard', [HomeController::class, 'index'])->name('admin-dashboard');
-
-    
-
 
     Route::get('view_category', [AdminController::class, 'view_category'])->name('view.category');
     Route::post('add_category', [AdminController::class, 'add_category'])->name('add.category');
@@ -59,13 +53,16 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
 
 // Routes for HomeController
 Route::get('product_details/{id}', [HomeController::class, 'product_details'])->name('product_details');
-Route::get('add_cart/{id}', [HomeController::class, 'add_cart'])->name('add_cart');
-Route::get('mycart', [HomeController::class, 'mycart'])->name('mycart');
-Route::get('delete_cart/{id}', [HomeController::class, 'delete_cart'])->name('delete_cart');
-Route::post('confirm_order', [HomeController::class, 'confirm_order'])->name('confirm_order');
+
+// Routes requiring authentication
+Route::middleware('auth')->group(function () {
+    Route::get('add_cart/{id}', [HomeController::class, 'add_cart'])->name('add_cart');
+    Route::get('delete_cart/{id}', [HomeController::class, 'delete_cart'])->name('delete_cart');
+    Route::get('mycart', [HomeController::class, 'mycart'])->name('mycart');
+    Route::post('confirm_order', [HomeController::class, 'confirm_order'])->name('confirm_order');
+});
 
 Route::get('shop', [HomeController::class, 'shop'])->name('shop');
 Route::get('why', [HomeController::class, 'why'])->name('why');
 Route::get('contact', [HomeController::class, 'contact'])->name('contact');
-
-
+Route::post('contact', [ContactController::class, 'store'])->name('contact.store');
