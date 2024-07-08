@@ -101,18 +101,18 @@ public function view_product(){
     return view('admin.view_product',compact('product'));
 }
 
-public function delete_product($id){
+public function delete_product($id)
+{
     $data = Product::find($id);
-    $image_path = public_path('products/' . $data->image);
-    if (file_exists($image_path)) {
-        unlink($image_path);
+    if ($data) {
+        $data->delete();
+        toastr()->timeOut(3000)->closeButton()->addSuccess('Product Deleted Successfully');
+    } else {
+        toastr()->timeOut(3000)->closeButton()->addError('Product Not Found');
     }
-    $data->delete();
-
-    toastr()->timeOut(3000)->closeButton()->addSuccess('Product Deleted Successfully');
-    // return redirect()->back();
     return redirect()->route('view.product');
 }
+
 
 
 public function update_product($id){

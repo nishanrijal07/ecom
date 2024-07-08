@@ -42,7 +42,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('add_product', [AdminController::class, 'add_product'])->name('add.product');
     Route::post('upload_product', [AdminController::class, 'upload_product'])->name('upload.product');
     Route::get('view_product', [AdminController::class, 'view_product'])->name('view.product');
-    Route::get('delete_product/{id}', [AdminController::class, 'delete_product'])->name('delete.product');
+    Route::delete('delete_product/{id}', [AdminController::class, 'delete_product'])->name('delete.product');
     Route::get('update_product/{id}', [AdminController::class, 'update_product'])->name('update.product');
     Route::post('edit_product/{id}', [AdminController::class, 'edit_product'])->name('edit.product');
     Route::get('product_search', [AdminController::class, 'product_search'])->name('product.search');

@@ -91,51 +91,67 @@
     </style>
 </head>
 <body>
+    @include('admin.header')
+    @include('admin.sidebar')
 
-@include('admin.header')
-@include('admin.sidebar')
-
-<div class="page-content">
-    <div class="page-header">
-        <div class="container-fluid">
-            <h1>Add Category</h1>
-            <div class="div_deg">
-                <form action="{{ route('add.category') }}" method="post">
-                    @csrf
-                    <div>
-                        <input type="text" name="category_name" required>
-                        <input class="btn btn-primary" type="submit" value="Add Category">
-                    </div>
-                </form>
-            </div>
-            <div>
-                <table class="table_deg">
-                    <tr>
-                        <th>Category Name</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-                    @foreach($data as $category)
-                    <tr>
-                        <td>{{ $category->category_name }}</td>
-                        <td>
-                            <a class="btn btn-success" href="{{ route('edit.category', $category->id) }}">Edit</a>
-                        </td>
-                        <td>
-                            <form action="{{ route('delete.category', $category->id) }}" method="POST" onsubmit="return confirmation(event);">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
-                        </td>
-                    @endforeach
-                </table>
+    <div class="page-content">
+        <div class="page-header">
+            <div class="container-fluid">
+                <h1>Add Category</h1>
+                <div class="div_deg">
+                    <form action="{{ route('add.category') }}" method="post">
+                        @csrf
+                        <div>
+                            <input type="text" name="category_name" required>
+                            <input class="btn btn-primary" type="submit" value="Add Category">
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <table class="table_deg">
+                        <tr>
+                            <th>Category Name</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                        @foreach($data as $category)
+                        <tr>
+                            <td>{{ $category->category_name }}</td>
+                            <td>
+                                <a class="btn btn-success" href="{{ route('edit.category', $category->id) }}">Edit</a>
+                            </td>
+                            <td>
+                                <form action="{{ route('delete.category', $category->id) }}" method="POST" onsubmit="confirmation(event, this);">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </table>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-@include('admin.js')
+    @include('admin.js')
 
+    <script type="text/javascript">
+        function confirmation(event, form) {
+            event.preventDefault();
+            swal({
+                title: "Are You Sure to Delete This?",
+                text: "This deletion will be permanent.",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            }).then((willDelete) => {
+                if (willDelete) {
+                    form.submit();
+                }
+            });
+        }
+    </script>
 </body>
 </html>
