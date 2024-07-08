@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KhaltiController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -68,4 +69,10 @@ Route::post('contact', [ContactController::class, 'store'])->name('contact.store
 
 Route::get('shop', [HomeController::class, 'shop'])->name('shop');
 Route::get('why', [HomeController::class, 'why'])->name('why');
+
+
+Route::post('/khalti-payment', [KhaltiController::class, 'khaltiPayment'])->name('khalti.payment');
+Route::get('/khalti-callback', [KhaltiController::class, 'callBackFunction'])->name('khalti.callback');
+Route::get('/khalti-status/{pidx}', [KhaltiController::class, 'checkStatus'])->name('khalti.status');
+
 
