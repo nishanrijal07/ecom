@@ -14,7 +14,7 @@
         <div class="container-fluid d-flex align-items-center justify-content-between">
             <div class="navbar-header">
                 <!-- Navbar Header -->
-                <a href="index.html" class="navbar-brand">
+                <a href="home" class="navbar-brand">
                     <div class="brand-text brand-big visible text-uppercase">
                     <strong class="text-primary">Hamro</strong> <strong>Electronics</strong>
 
