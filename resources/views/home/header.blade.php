@@ -30,7 +30,8 @@
         }
 
         .navbar-brand img {
-            height: 40px; /* Adjust height of the logo */
+            height: 80px; /* Increased height of the logo */
+            width: auto; /* Maintain aspect ratio */
             opacity: 0.8; /* Make the logo slightly transparent */
             transition: opacity 0.3s; /* Smooth transition on hover */
         }
@@ -98,7 +99,7 @@
     <header class="header_section">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
             <a class="navbar-brand" href="{{ route('home') }}">
-                <img src="{{ asset('images/loogo.png') }}" alt="Logo">
+                <img src="{{ asset('images/Hamro.png') }}" alt="Logo">
                 <!-- Adjust the alt text accordingly -->
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"

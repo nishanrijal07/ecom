@@ -146,7 +146,7 @@
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
     © 2024 Copyright:
-    <a href="https://www.linkedin.com/in/nishan-rijal-33239820b">Nishan Rijal</a>
+    <a href="https://www.linkedin.com/in/nishan-rijal-33239820b">Hamro Electronics</a>
   </div>
   <!-- Copyright -->
 </footer>

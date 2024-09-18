@@ -84,7 +84,7 @@
         <a class="btn btn-success" href="{{ route('update.product', $products->id) }}">Edit</a>
     </td>
     <td>
-        <form action="{{ route('delete.product', $products->id) }}" method="POST" onsubmit="confirmation(event)">
+        <form action="{{ route('delete.product', $products->id) }}" method="POST" onsubmit="confirmation(event,this)">
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-danger">Delete</button>

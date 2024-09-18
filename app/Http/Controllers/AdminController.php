@@ -103,15 +103,25 @@ public function view_product(){
 
 public function delete_product($id){
     $data = Product::find($id);
-    $image_path = public_path('products/' . $data->image);
-    if (file_exists($image_path)) {
-        unlink($image_path);
-    }
-    $data->delete();
-
+    
+    $order = Order::where('product_id',$data->id)->count();
+    if($order == 0)
+    {
+        $image_path = public_path('products/' . $data->image);
+        if (file_exists($image_path)) {
+            unlink($image_path);
+        }
+        $data->delete();
     toastr()->timeOut(3000)->closeButton()->addSuccess('Product Deleted Successfully');
+   
+    return redirect()->route('view.product');
+    }
+    else
+    {
+        toastr()->timeOut(3000)->closeButton()->addSuccess('Product is Used on Orders');
     // return redirect()->back();
     return redirect()->route('view.product');
+    }
 }
 
 
